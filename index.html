@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAG STORE | 프리미엄 가방 쇼핑몰</title>
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. 네비게이션 메뉴 -->
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo">LUXE BAGS</a>
+      <ul class="nav-links">
+        <li><a href="#">NEW</a></li>
+        <li><a href="#">BEST</a></li>
+        <li><a href="#">WOMEN</a></li>
+        <li><a href="#">MEN</a></li>
+        <li><a href="#">ACC</a></li>
+      </ul>
+      <div class="nav-icons">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-bag-shopping"></i>
+        <i class="fa-regular fa-user"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 2. MD 추천 상품 (3D 쇼케이스) -->
+  <section class="md-showcase">
+    <div class="section-title">MD'S PICK SHOWCASE</div>
+    <div class="section-subtitle">3D 뷰어로 가방의 질감과 컬러를 입체적으로 확인해 보세요</div>
+
+    <div class="showcase-card">
+      <span class="showcase-badge">MD 추천</span>
+      <!-- Three.js 캔버스 영역 -->
+      <div id="canvas-container"></div>
+
+      <div class="showcase-info">
+        <h3>시그니처 레더 토트백 (3D)</h3>
+        <p class="price">289,000원</p>
+        
+        <!-- 컬러 선택 스와치 -->
+        <div class="color-picker">
+          <div class="color-btn active" style="background-color: #2b2b2b;" onclick="changeBagColor('#2b2b2b', this)"></div>
+          <div class="color-btn" style="background-color: #8b5a2b;" onclick="changeBagColor('#8b5a2b', this)"></div>
+          <div class="color-btn" style="background-color: #c4a482;" onclick="changeBagColor('#c4a482', this)"></div>
+          <div class="color-btn" style="background-color: #2e4057;" onclick="changeBagColor('#2e4057', this)"></div>
+        </div>
+
+        <button class="btn-primary">장바구니 담기</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 인기 상품 목록 -->
+  <section class="popular-products">
+    <div class="section-title">BEST PRODUCTS</div>
+    <div class="section-subtitle">지금 가장 사랑받는 인기 아이템</div>
+
+    <div class="product-grid" id="productGrid">
+      <!-- JS로 7개 상품이 동적으로 추가됩니다 -->
+    </div>
+
+    <div class="more-btn-container">
+      <button class="btn-secondary" onclick="loadMoreProducts()">인기상품 더보기 <i class="fa-solid fa-chevron-down" style="margin-left: 6px;"></i></button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 LUXE BAGS. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- OrbitControls CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
